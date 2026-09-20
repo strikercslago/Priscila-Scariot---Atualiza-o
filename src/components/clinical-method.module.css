@@ -1,0 +1,364 @@
+.transition,
+.clinical {
+  --green: #3f6b59;
+  --green-deep: #305341;
+  --cream: #f9e7b8;
+  --paper: #faf9f5;
+  --ink: #232320;
+}
+
+.transition {
+  position: relative;
+  min-height: clamp(370px, 40vh, 470px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 76px 5%;
+  background-color: var(--green);
+  background-image: linear-gradient(rgb(20 45 36 / 20%), rgb(20 45 36 / 20%)), url('/transition-apples.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--paper);
+}
+
+.transitionMedia,
+.transitionOverlay { display: none; }
+
+.organicLines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--cream);
+  opacity: .09;
+  pointer-events: none;
+}
+
+.organicLines path {
+  stroke: currentColor;
+  stroke-width: 1;
+}
+
+.transitionCopy {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.transitionLabel,
+.eyebrow {
+  margin: 0;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.transitionLabel {
+  margin-bottom: 25px;
+  color: rgb(249 231 184 / 72%);
+}
+
+.transitionTitle {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(39px, 4vw, 59px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+
+.transitionTitle span {
+  display: block;
+}
+
+.transitionTitle em {
+  color: var(--cream);
+  font-weight: 500;
+}
+
+.clinical {
+  padding: 138px 5% 148px;
+  background: var(--paper);
+  color: var(--ink);
+  overflow: hidden;
+  scroll-margin-top: 100px;
+}
+
+.clinicalInner {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+
+.clinicalHeader {
+  max-width: 810px;
+}
+
+.eyebrow {
+  margin-bottom: 27px;
+  color: var(--green);
+}
+
+.clinicalTitle {
+  margin: 0;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(47px, 5vw, 72px);
+  font-weight: 500;
+  line-height: .99;
+  letter-spacing: -.03em;
+  text-wrap: balance;
+}
+
+.clinicalTitle em {
+  color: var(--green);
+  font-weight: 500;
+}
+
+.stage {
+  display: grid;
+  grid-template-columns: .82fr 1.08fr 1.32fr;
+  grid-template-rows: auto auto auto auto;
+  column-gap: clamp(42px, 5.2vw, 78px);
+  margin-top: 78px;
+  align-items: start;
+}
+
+.intro {
+  grid-column: 2;
+  grid-row: 1;
+  max-width: 340px;
+  margin: 7px 0 28px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(27px, 2.4vw, 35px);
+  font-weight: 500;
+  line-height: 1.12;
+  color: var(--green-deep);
+}
+
+.body {
+  grid-column: 2;
+  grid-row: 2;
+  max-width: 400px;
+  margin: 0 0 31px;
+  font-size: 14px;
+  line-height: 1.88;
+  color: rgb(35 35 32 / 70%);
+}
+
+.factors {
+  grid-column: 2;
+  grid-row: 3;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 0 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 38px;
+  border-top: 1px solid rgb(63 107 89 / 25%);
+}
+
+.factors li {
+  position: relative;
+  padding: 12px 0 11px 13px;
+  border-bottom: 1px solid rgb(63 107 89 / 16%);
+  color: rgb(35 35 32 / 76%);
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.factors li::before {
+  content: '';
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.closing {
+  grid-column: 2;
+  grid-row: 4;
+  max-width: 400px;
+  margin: 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--green);
+  font-size: 13px;
+  line-height: 1.82;
+  color: var(--ink);
+}
+
+.figure {
+  position: relative;
+  margin: 0;
+  overflow: visible;
+}
+
+.figure::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: 14px;
+  box-shadow: inset 0 0 0 1px rgb(35 35 32 / 4%);
+  pointer-events: none;
+}
+
+.photo {
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.mainFigure {
+  grid-column: 3;
+  grid-row: 1 / span 4;
+  width: 100%;
+  height: 700px;
+}
+
+.mainFigure .photo {
+  object-position: 50% 38%;
+}
+
+.secondaryFigure {
+  grid-column: 1;
+  grid-row: 1 / span 4;
+  align-self: center;
+  width: 100%;
+  height: 500px;
+  margin-top: 92px;
+}
+
+.secondaryFigure .photo {
+  object-position: 50% 45%;
+}
+
+.floatingNote {
+  position: absolute;
+  z-index: 2;
+  min-width: 130px;
+  margin: 0;
+  padding: 15px 17px;
+  border-radius: 12px;
+  box-shadow: 0 12px 34px rgb(35 35 32 / 9%);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  color: var(--ink);
+}
+
+.floatingNote span {
+  color: rgb(35 35 32 / 64%);
+  font-weight: 400;
+}
+
+.noteLeft {
+  top: 34px;
+  right: -26px;
+  background: var(--paper);
+}
+
+.noteRight {
+  right: auto;
+  bottom: 48px;
+  left: -30px;
+  background: var(--cream);
+}
+
+.visible .transitionCopy {
+  animation: transitionEnter .8s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.visible .clinicalHeader,
+.visible .intro,
+.visible .body,
+.visible .factors,
+.visible .closing {
+  animation: copyEnter .78s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+.visible .intro { animation-delay: .08s; }
+.visible .body { animation-delay: .14s; }
+.visible .factors { animation-delay: .2s; }
+.visible .closing { animation-delay: .26s; }
+.visible .photo { animation: photoEnter .9s cubic-bezier(.16, 1, .3, 1) both; }
+.visible .secondaryFigure .photo { animation-delay: .08s; }
+.visible .floatingNote { animation: noteEnter .7s .2s cubic-bezier(.16, 1, .3, 1) both; }
+
+@keyframes transitionEnter {
+  from { opacity: .25; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes copyEnter {
+  from { opacity: .25; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes photoEnter {
+  from { transform: scale(1.02); }
+  to { transform: scale(1); }
+}
+
+@keyframes noteEnter {
+  from { opacity: .2; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@media (max-width: 1050px) {
+  .clinical { padding: 110px 5% 120px; }
+  .stage { grid-template-columns: .75fr 1fr 1.05fr; column-gap: 40px; }
+  .mainFigure { height: 640px; }
+  .secondaryFigure { height: 450px; }
+  .body { font-size: 16px; }
+}
+
+@media (max-width: 760px) {
+  .transition { min-height: 44svh; padding: 52px 7%; background-image: none; background-attachment: scroll; }
+  .transitionMedia { position: absolute; z-index: 0; inset: calc(-1 * var(--parallax-overscan, 50%)) 0; display: block; will-change: transform; }
+  .transitionPhoto { object-fit: cover; object-position: center; }
+  .transitionOverlay { position: absolute; z-index: 1; inset: 0; display: block; background: rgb(20 45 36 / 20%); pointer-events: none; }
+  .organicLines { z-index: 2; }
+  .transitionCopy { z-index: 3; }
+  .transitionLabel { margin-bottom: 23px; font-size: 9px; }
+  .transitionTitle { font-size: clamp(37px, 10.3vw, 50px); line-height: 1.06; }
+  .transitionTitle span { display: inline; }
+  .transitionTitle span::after { content: ' '; }
+
+  .clinical { padding: 90px 7% 96px; }
+  .clinicalHeader { max-width: none; }
+  .eyebrow { margin-bottom: 24px; font-size: 9px; letter-spacing: .16em; }
+  .clinicalTitle { font-size: clamp(44px, 12vw, 60px); line-height: 1.02; }
+  .clinicalTitle br { display: none; }
+  .stage { display: flex; flex-direction: column; gap: 0; margin-top: 45px; }
+  .intro { order: 1; max-width: 320px; margin: 0 0 30px; font-size: 30px; }
+  .mainFigure { order: 2; width: 100%; height: auto; aspect-ratio: 4 / 5; margin-bottom: 40px; }
+  .body { order: 3; max-width: none; margin-bottom: 30px; font-size: 16px; line-height: 1.75; }
+  .factors { order: 4; width: 100%; margin-bottom: 44px; grid-template-columns: 1fr 1fr; }
+  .factors li { min-height: 51px; padding-top: 15px; font-size: 11px; }
+  .factors li::before { top: 20px; }
+  .secondaryFigure { order: 5; width: 82%; height: auto; aspect-ratio: 3 / 4; margin: 0 0 49px; align-self: flex-start; }
+  .closing { order: 6; max-width: none; font-size: 16px; }
+  .noteRight { bottom: 24px; left: 16px; }
+  .noteLeft { top: 24px; right: -22%; }
+  .floatingNote { min-width: 124px; padding: 14px 16px; font-size: 12px; }
+  .visible .photo,
+  .visible .floatingNote { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transitionMedia { transform: none !important; will-change: auto; }
+  .visible .transitionCopy,
+  .visible .clinicalHeader,
+  .visible .intro,
+  .visible .body,
+  .visible .factors,
+  .visible .closing,
+  .visible .photo,
+  .visible .floatingNote { animation: none; }
+}
+@media (min-width: 761px) and (max-width: 1023px) { .closing { font-size: 16px; } }

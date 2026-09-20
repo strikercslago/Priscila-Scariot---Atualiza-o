@@ -1,0 +1,6 @@
+Assets: public/areas/01_emagrecimento_obesidade.png through public/areas/06_nutricao_funcional_preventiva.png
+Origin: user-supplied kit at C:/Users/striker/Downloads/kit_priscila_areas_atuacao/
+Usage: shipping photography for the Áreas de atuação homepage section.
+Transformations: copied without visual edits; responsive cropping is applied only at render time with CSS object-fit/object-position.
+Accompanying assets: public/icons/*.svg and public/decor/*.svg from the same user-supplied kit.
+

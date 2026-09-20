@@ -1,0 +1,10 @@
+node_modules/
+.next/
+.tools/
+.pnpm-store/
+.audit/
+.impeccable/review/
+.env*.local
+tsconfig.tsbuildinfo
+test-results/
+site-completo.png

@@ -1,0 +1,77 @@
+.manifesto {
+  --green: #3f6b59;
+  --green-deep: #305341;
+  --cream: #f9e7b8;
+  --paper: #faf9f5;
+  position: relative;
+  display: flex;
+  min-height: 88svh;
+  align-items: center;
+  overflow: hidden;
+  padding: 92px 5%;
+  background-color: var(--green-deep);
+  background-image: linear-gradient(90deg, rgb(13 31 24 / 28%) 0%, rgb(13 31 24 / 62%) 38%, rgb(13 31 24 / 52%) 65%, rgb(13 31 24 / 28%) 100%), url('/manifesto-consulta.webp');
+  background-position: center center, 65% 40%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--paper);
+}
+
+.inner { width: 100%; max-width: 1360px; margin: 0 auto; }
+.copyBlock { max-width: 720px; margin-left: clamp(260px, 24vw, 470px); }
+.eyebrow { display: flex; align-items: center; gap: 13px; margin: 0 0 27px; color: rgb(249 231 184 / 84%); font-size: 10px; font-weight: 500; letter-spacing: .19em; text-transform: uppercase; }
+.eyebrow i { display: block; width: 34px; height: 1px; background: currentColor; }
+.title { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(56px, 4.6vw, 72px); font-weight: 500; line-height: 1.01; letter-spacing: -.025em; text-wrap: balance; }
+.title span { display: block; }
+.title span + span { margin-top: 7px; }
+.title em { color: var(--cream); font-weight: 500; }
+.support { max-width: 610px; margin: 30px 0 0; color: rgb(250 249 245 / 88%); font-size: clamp(17px, 1.35vw, 20px); line-height: 1.65; }
+.closing { display: flex; align-items: stretch; gap: 18px; max-width: 590px; margin: 27px 0 0; color: rgb(250 249 245 / 78%); font-size: 13px; line-height: 1.72; }
+.closing i { flex: 0 0 1px; width: 1px; background: rgb(249 231 184 / 72%); }
+.actionGroup { display: flex; align-items: center; gap: 24px; margin-top: 34px; }
+.actionWrap { position: relative; display: inline-flex; }
+.button { display: inline-flex; align-items: center; justify-content: center; gap: 17px; min-height: 52px; padding: 16px 22px; border: 0; border-radius: 7px; background: var(--cream); color: var(--green-deep); font-size: 13px; font-weight: 600; white-space: nowrap; transition: background .3s, transform .3s; }
+.button:hover { background: var(--paper); transform: translateY(-2px); }
+.button svg { transition: transform .3s; }
+.button:hover svg { transform: translate(2px, -2px); }
+.notice { position: absolute; top: calc(100% + 12px); left: 0; z-index: 2; width: 260px; padding: 14px 16px; border-radius: 8px; background: var(--paper); box-shadow: 0 12px 30px rgb(5 18 12 / 24%); color: #232320; font-size: 12px; line-height: 1.55; }
+.microcopy { color: rgb(250 249 245 / 74%); font-size: 11px; }
+
+.visible .eyebrow { animation: manifestoEnter .68s cubic-bezier(.16, 1, .3, 1) both; }
+.visible .title { animation: manifestoEnter .82s .06s cubic-bezier(.16, 1, .3, 1) both; }
+.visible .support { animation: manifestoEnter .76s .16s cubic-bezier(.16, 1, .3, 1) both; }
+.visible .closing { animation: manifestoEnter .76s .23s cubic-bezier(.16, 1, .3, 1) both; }
+.visible .actionGroup { animation: manifestoEnter .72s .3s cubic-bezier(.16, 1, .3, 1) both; }
+
+@keyframes manifestoEnter {
+  from { opacity: .25; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1100px) {
+  .manifesto { min-height: 80svh; padding: 72px 4.5%; background-position: center center, 38% 40%; }
+  .copyBlock { max-width: 650px; margin-left: clamp(210px, 23vw, 300px); }
+  .title { font-size: clamp(48px, 5.7vw, 61px); }
+  .support { max-width: 570px; font-size: 16px; }
+}
+
+@media (max-width: 760px) {
+  .manifesto { min-height: max(78svh, 760px); align-items: flex-start; padding: 228px 7% 52px; background-image: linear-gradient(180deg, rgb(13 31 24 / 12%) 0%, rgb(13 31 24 / 42%) 28%, rgb(13 31 24 / 78%) 58%, rgb(13 31 24 / 88%) 100%), url('/manifesto-consulta.webp'); background-position: center center, 34% center; background-attachment: scroll; }
+  .copyBlock { max-width: none; margin-left: 0; }
+  .eyebrow { gap: 10px; margin-bottom: 22px; font-size: 8px; letter-spacing: .14em; }
+  .eyebrow i { width: 24px; }
+  .title { font-size: clamp(40px, 11.4vw, 51px); line-height: 1.02; }
+  .title span + span { margin-top: 5px; }
+  .support { margin-top: 24px; font-size: 16px; line-height: 1.7; }
+  .closing { gap: 14px; margin-top: 22px; font-size: 16px; line-height: 1.65; }
+  .actionGroup { align-items: flex-start; flex-direction: column; gap: 13px; margin-top: 27px; }
+  .actionWrap, .button { width: 100%; }
+  .microcopy { align-self: center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .manifesto { background-attachment: scroll; }
+  .visible .eyebrow, .visible .title, .visible .support, .visible .closing, .visible .actionGroup { animation: none; }
+}
+@media (min-width: 761px) and (max-width: 1023px) { .closing { font-size: 16px; } }

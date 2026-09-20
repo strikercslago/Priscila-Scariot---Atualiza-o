@@ -1,0 +1,5 @@
+Asset: public/manifesto-consulta.webp
+Origin: user-supplied image codex-clipboard-423e3a17-0cfd-4664-b634-6da4c2b4e3c8.png
+Usage: full-width background of the homepage manifesto section.
+Transformations: WebP conversion at quality 88; no crop, filter or color edit was baked into the file. Responsive focal positioning and overlay are applied in CSS.
+

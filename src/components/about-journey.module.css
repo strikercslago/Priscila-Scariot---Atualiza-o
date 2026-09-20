@@ -1,0 +1,118 @@
+.section {
+  --green: #3f6b59;
+  --green-deep: #305341;
+  --cream: #f9e7b8;
+  --paper: #faf9f5;
+  --ink: #232320;
+  background: var(--paper);
+  color: var(--ink);
+  scroll-margin-top: 100px;
+}
+
+.expertiseStrip { padding: 31px 5%; border-bottom: 1px solid rgb(63 107 89 / 17%); }
+.expertiseStrip ul { display: flex; max-width: 1320px; align-items: center; justify-content: space-between; gap: 28px; margin: 0 auto; padding: 0; list-style: none; }
+.expertiseStrip li { display: flex; align-items: center; gap: 28px; color: var(--green); font-size: 9px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+.expertiseStrip li:not(:last-child)::after { width: 3px; height: 3px; border-radius: 50%; background: var(--green); content: ''; opacity: .45; }
+.editorialInner { width: 90%; max-width: 1360px; margin: 0 auto; }
+.eyebrow { margin: 0 0 26px; color: var(--green); font-size: 10px; font-weight: 500; letter-spacing: .19em; text-transform: uppercase; }
+.figure { position: relative; z-index: 2; margin: 0; overflow: hidden; border-radius: 10px; }
+.photo { object-fit: cover; }
+
+.aboutBlock { display: grid; grid-template-columns: minmax(360px, .78fr) minmax(0, 1.22fr); align-items: center; padding: 158px 0 168px; }
+.aboutPortrait { height: 760px; }
+.aboutPortrait .photo { object-position: 18% center; }
+.aboutPanel { position: relative; z-index: 1; min-height: 660px; margin-left: -64px; padding: 104px clamp(66px, 6vw, 96px) 104px clamp(112px, 10vw, 150px); background: var(--ink); color: var(--paper); }
+.aboutPanel .eyebrow { color: rgb(249 231 184 / 82%); }
+.aboutTitle { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(52px, 5vw, 72px); font-weight: 500; line-height: .98; letter-spacing: -.025em; }
+.aboutTitle em { color: var(--cream); font-weight: 500; }
+.bodyLight, .bodyDark { max-width: 64ch; font-size: 14px; line-height: 1.84; }
+.bodyLight { margin-top: 39px; color: rgb(250 249 245 / 84%); }
+.bodyDark { margin-top: 35px; color: rgb(35 35 32 / 70%); }
+.bodyLight p, .bodyDark p { margin: 0; }
+.bodyLight p + p, .bodyDark p + p { margin-top: 16px; }
+
+.journeyBlock { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr); gap: clamp(75px, 9vw, 138px); align-items: center; padding: 25px 0 188px; }
+.journeyCopy h3, .closingCopy h3 { margin: 0; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; letter-spacing: -.026em; text-wrap: balance; }
+.journeyCopy h3 { max-width: 760px; font-size: clamp(50px, 5vw, 72px); line-height: .99; }
+.journeyCopy h3 em { color: var(--green); font-weight: 500; }
+.journeyPortrait { height: 800px; }
+.journeyPortrait::before { position: absolute; inset: 24px -24px -24px 24px; z-index: -1; background: var(--cream); content: ''; }
+.journeyPortrait .photo { object-position: 38% center; }
+.highlights { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 39px 34px; margin: 61px 0 0; padding: 0; list-style: none; }
+.highlights li { min-width: 0; padding-top: 13px; border-top: 1px solid rgb(63 107 89 / 31%); }
+.highlightLine { display: flex; align-items: center; gap: 14px; color: var(--green); font-size: 10px; font-weight: 600; letter-spacing: .13em; }
+.highlightLine i { width: 24px; height: 1px; background: currentColor; opacity: .55; }
+.highlights h4 { margin: 19px 0 9px; font-size: 10px; font-weight: 650; letter-spacing: .13em; text-transform: uppercase; }
+.highlights p { max-width: 31ch; margin: 0; color: rgb(35 35 32 / 68%); font-size: 12px; line-height: 1.62; }
+
+.closingBlock { padding: 118px 5% 126px; background: var(--green); color: var(--paper); }
+.closingInner { display: grid; grid-template-columns: minmax(380px, .9fr) minmax(0, 1.1fr); gap: clamp(80px, 9vw, 142px); max-width: 1360px; align-items: center; margin: 0 auto; }
+.closingFigure { height: 650px; margin-block: -58px; }
+.closingFigure .photo { object-position: 53% center; }
+.closingCopy { max-width: 680px; }
+.closingCopy .eyebrow { color: rgb(249 231 184 / 82%); }
+.closingCopy h3 { font-size: clamp(50px, 4.7vw, 70px); line-height: .99; }
+.closingCopy h3 em { color: var(--cream); font-weight: 500; }
+.closingBody { max-width: 61ch; margin: 35px 0 0; color: rgb(250 249 245 / 84%); font-size: 14px; line-height: 1.84; }
+.finalPhrase { margin: 31px 0 0; font-family: 'Cormorant Garamond', Georgia, serif; color: var(--cream); font-size: clamp(25px, 2.2vw, 32px); line-height: 1.12; }
+.closingAction { margin-top: 36px; }
+.closingAction :global(.button) { background: var(--cream); color: var(--green-deep); }
+.closingAction :global(.button:hover) { background: var(--paper); }
+.closingAction :global(.booking-notice) { background: var(--paper); color: var(--ink); }
+
+@supports (animation-timeline: view()) {
+  .figure .photo { animation: aboutPhoto .9s cubic-bezier(.16, 1, .3, 1) both; animation-timeline: view(); animation-range: entry 7% entry 42%; }
+  .aboutPanel > *, .journeyCopy > *, .closingCopy > * { animation: aboutCopy .78s cubic-bezier(.16, 1, .3, 1) both; animation-timeline: view(); animation-range: entry 8% entry 38%; }
+  .highlights li { animation: aboutCopy .68s cubic-bezier(.16, 1, .3, 1) both; animation-timeline: view(); animation-range: entry calc(8% + var(--highlight-index) * 2%) entry calc(34% + var(--highlight-index) * 2%); }
+}
+
+@keyframes aboutPhoto { from { transform: scale(1.02); } to { transform: scale(1); } }
+@keyframes aboutCopy { from { opacity: .28; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 1100px) {
+  .expertiseStrip ul { justify-content: center; flex-wrap: wrap; gap: 16px 25px; }
+  .expertiseStrip li { gap: 25px; }
+  .aboutBlock { grid-template-columns: .82fr 1.18fr; padding: 124px 0 142px; }
+  .aboutPortrait { height: 690px; }
+  .aboutPanel { min-height: 610px; margin-left: -46px; padding: 78px 55px 78px 88px; }
+  .journeyBlock { grid-template-columns: 1.05fr .95fr; gap: 58px; padding-bottom: 148px; }
+  .journeyPortrait { height: 710px; }
+  .highlights { gap: 31px 24px; margin-top: 48px; }
+  .closingInner { grid-template-columns: .92fr 1.08fr; gap: 64px; }
+  .closingFigure { height: 570px; }
+}
+
+@media (max-width: 760px) {
+  .expertiseStrip { padding: 25px 7%; }
+  .expertiseStrip ul { justify-content: flex-start; gap: 13px 19px; }
+  .expertiseStrip li { gap: 19px; font-size: 8px; letter-spacing: .12em; }
+  .editorialInner { width: 86%; }
+  .eyebrow { margin-bottom: 22px; font-size: 9px; letter-spacing: .16em; }
+  .aboutBlock { display: flex; padding: 88px 0 112px; flex-direction: column; }
+  .aboutPortrait { width: 94%; height: auto; aspect-ratio: 4 / 5; align-self: flex-start; border-radius: 8px; }
+  .aboutPanel { width: 100%; min-height: 0; margin: -34px -7% 0 7%; padding: 78px 36px 58px; }
+  .aboutTitle { font-size: clamp(44px, 12.5vw, 57px); line-height: 1; }
+  .bodyLight, .bodyDark { font-size: 16px; line-height: 1.72; }
+  .bodyLight { margin-top: 32px; }
+  .journeyBlock { display: flex; padding: 0 0 126px; flex-direction: column; gap: 51px; }
+  .journeyCopy h3 { font-size: clamp(43px, 12vw, 56px); line-height: 1; }
+  .bodyDark { margin-top: 31px; }
+  .highlights { grid-template-columns: 1fr; gap: 28px; margin-top: 49px; }
+  .highlights h4 { margin-top: 16px; font-size: 9px; }
+  .highlights p { max-width: none; font-size: 16px; }
+  .journeyPortrait { order: 2; width: 100%; height: auto; aspect-ratio: 4 / 5; }
+  .closingBlock { padding: 0 0 88px; }
+  .closingInner { display: flex; flex-direction: column; gap: 0; }
+  .closingFigure { order: 1; width: 100%; height: auto; aspect-ratio: 1 / 1.02; margin: 0; border-radius: 0; }
+  .closingCopy { order: 2; padding: 70px 7% 0; }
+  .closingCopy h3 { font-size: clamp(43px, 11.8vw, 55px); line-height: 1; }
+  .closingBody { margin-top: 29px; font-size: 16px; line-height: 1.72; }
+  .finalPhrase { margin-top: 28px; font-size: 28px; }
+  .closingAction { margin-top: 34px; }
+  .closingAction :global(.booking-wrap), .closingAction :global(.button) { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .figure .photo, .aboutPanel > *, .journeyCopy > *, .closingCopy > *, .highlights li { animation: none !important; transform: none !important; }
+}
+@media (min-width: 761px) and (max-width: 1023px) { .bodyLight, .bodyDark, .closingBody, .highlights p { font-size: 16px; } }

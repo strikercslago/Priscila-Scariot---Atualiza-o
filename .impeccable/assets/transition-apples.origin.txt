@@ -1,0 +1,4 @@
+Asset: public/transition-apples.png
+Origin: user-supplied image codex-clipboard-4579c55f-1513-4410-ae6f-8361a2d411d6.png
+Usage: background of the “Não se trata de comer perfeito” transition section.
+Transformations: copied without visual edits; cover crop, centered positioning and subtle uniform overlay are applied only in CSS.
