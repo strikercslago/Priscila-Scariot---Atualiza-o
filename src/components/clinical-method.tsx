@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-import analysisImage from '../../public/clinical-analysis.png';
-import consultationImage from '../../public/clinical-consultation.png';
+import analysisImage from '../../public/priscila-analise-exames.png';
+import lectureImage from '../../public/priscila-palestra.png';
 import transitionImage from '../../public/transition-apples.png';
 import styles from './clinical-method.module.css';
 
@@ -143,8 +143,8 @@ export function ClinicalMethod() {
 
             <figure className={`${styles.figure} ${styles.mainFigure}`}>
               <Image
-                src={consultationImage}
-                alt="Nutricionista e paciente conversando sobre exames e planejamento durante uma consulta"
+                src={lectureImage}
+                alt="Dra. Priscila apresentando uma palestra para profissionais de saúde"
                 fill
                 placeholder="blur"
                 sizes="(max-width: 760px) 86vw, (max-width: 1200px) 34vw, 470px"
@@ -162,7 +162,7 @@ export function ClinicalMethod() {
             <figure className={`${styles.figure} ${styles.secondaryFigure}`}>
               <Image
                 src={analysisImage}
-                alt="Profissional analisando exames e registrando observações clínicas"
+                alt="Dra. Priscila analisando exames e registrando observações clínicas"
                 fill
                 placeholder="blur"
                 sizes="(max-width: 760px) 86vw, (max-width: 1200px) 24vw, 330px"

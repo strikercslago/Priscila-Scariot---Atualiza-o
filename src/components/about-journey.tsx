@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import aboutPortrait from '../../public/priscila-about-new.png';
-import consultation from '../../public/manifesto-consulta.webp';
+import careerEvent from '../../public/priscila-trajetoria-evento.png';
 import clinicalAnalysis from '../../public/clinical-analysis.png';
 import { BookingButton } from './landing';
 import styles from './about-journey.module.css';
@@ -75,7 +75,7 @@ function JourneyBlock() {
         <CareerHighlights />
       </div>
       <figure className={`${styles.figure} ${styles.journeyPortrait}`}>
-        <Image src={consultation} alt="Dra. Priscila durante uma consulta, conversando e escrevendo ao lado de uma paciente" fill placeholder="blur" sizes="(max-width: 760px) 86vw, (max-width: 1100px) 41vw, 520px" className={styles.photo} />
+        <Image src={careerEvent} alt="Dra. Priscila em um evento de pós-graduação em nutrição" fill placeholder="blur" sizes="(max-width: 760px) 86vw, (max-width: 1100px) 41vw, 520px" className={styles.photo} />
       </figure>
     </div>
   );

@@ -1,4 +1,6 @@
 import Image, { type StaticImageData } from 'next/image';
+import { Activity, Brain, Droplet, HandHeart, HeartPulse, Hourglass, Pill, ShieldCheck, Sprout, type LucideIcon } from 'lucide-react';
+import type { ComponentType, SVGProps } from 'react';
 import area01 from '../../public/areas/01_emagrecimento_obesidade.png';
 import area02 from '../../public/areas/02_saude_metabolica.png';
 import area03 from '../../public/areas/03_saude_da_mulher.png';
@@ -7,8 +9,9 @@ import area05 from '../../public/areas/05_saude_digestiva.png';
 import area06 from '../../public/areas/06_nutricao_funcional_preventiva.png';
 import styles from './areas-section.module.css';
 import { AdaptiveCardStack } from './adaptive-card-stack';
+import { BodyWeightIcon, BreastfeedingIcon, EndometriosisIcon, FertilityIcon, FoodRelationshipIcon, InjectionPenIcon, InsulinResistanceIcon, IntestineIcon, LiverIcon, MenopauseIcon, MindfulEatingIcon, PolycysticOvaryIcon, PostpartumIcon, PregnancyIcon, WeightLossIcon } from './area-feature-icons';
 
-type AreaFeature = { icon: string; label: string };
+type AreaFeature = { Icon: LucideIcon | ComponentType<SVGProps<SVGSVGElement>>; label: string };
 type Area = {
   number: string;
   title: string;
@@ -35,10 +38,10 @@ const areas: Area[] = [
     decoration: 'curve',
     position: '50% 46%',
     features: [
-      { icon: 'alimentacao', label: 'Emagrecimento' },
-      { icon: 'metabolismo', label: 'Obesidade' },
-      { icon: 'comportamento', label: 'Metabolismo' },
-      { icon: 'rotina', label: 'Canetas emagrecedoras' },
+      { Icon: WeightLossIcon, label: 'Emagrecimento' },
+      { Icon: BodyWeightIcon, label: 'Obesidade' },
+      { Icon: Activity, label: 'Metabolismo' },
+      { Icon: InjectionPenIcon, label: 'Canetas emagrecedoras' },
     ],
   },
   {
@@ -54,10 +57,10 @@ const areas: Area[] = [
     decoration: 'leaf',
     position: '50% 54%',
     features: [
-      { icon: 'glicemia', label: 'Diabetes tipo 2' },
-      { icon: 'colesterol', label: 'Resistência à insulina' },
-      { icon: 'resistencia_insulina', label: 'Síndrome metabólica' },
-      { icon: 'exames', label: 'Esteatose hepática' },
+      { Icon: Droplet, label: 'Diabetes tipo 2' },
+      { Icon: InsulinResistanceIcon, label: 'Resistência à insulina' },
+      { Icon: HeartPulse, label: 'Síndrome metabólica' },
+      { Icon: LiverIcon, label: 'Esteatose hepática' },
     ],
   },
   {
@@ -68,15 +71,15 @@ const areas: Area[] = [
       'O acompanhamento considera metabolismo, saúde hormonal, sintomas, rotina e necessidades individuais em condições como endometriose, SOMP/SOP, menopausa e infertilidade.',
     ],
     image: area03,
-    alt: 'Mulher segurando flores junto ao corpo em uma cena delicada e acolhedora',
+    alt: '',
     tone: 'paper',
     decoration: 'line',
     position: '50% 45%',
     features: [
-      { icon: 'ciclo_menstrual', label: 'Endometriose' },
-      { icon: 'fertilidade', label: 'SOMP / SOP' },
-      { icon: 'climaterio', label: 'Menopausa' },
-      { icon: 'bem_estar_hormonal', label: 'Infertilidade' },
+      { Icon: EndometriosisIcon, label: 'Endometriose' },
+      { Icon: PolycysticOvaryIcon, label: 'SOMP / SOP' },
+      { Icon: MenopauseIcon, label: 'Menopausa' },
+      { Icon: FertilityIcon, label: 'Infertilidade' },
     ],
   },
   {
@@ -87,15 +90,15 @@ const areas: Area[] = [
       'O acompanhamento considera comportamento alimentar, emoções, rotina e histórico individual, inclusive em situações que envolvem compulsão alimentar e transtornos alimentares, sempre respeitando a necessidade de acompanhamento multidisciplinar quando indicado.',
     ],
     image: area04,
-    alt: 'Pessoa escrevendo sobre escolhas conscientes em um caderno',
+    alt: '',
     tone: 'green',
     decoration: 'leaf',
     position: '50% 52%',
     features: [
-      { icon: 'consciencia', label: 'Compulsão alimentar' },
-      { icon: 'equilibrio', label: 'Relação com a comida' },
-      { icon: 'liberdade', label: 'Consciência alimentar' },
-      { icon: 'sustentabilidade', label: 'Estratégia sustentável' },
+      { Icon: Brain, label: 'Compulsão alimentar' },
+      { Icon: FoodRelationshipIcon, label: 'Relação com a comida' },
+      { Icon: MindfulEatingIcon, label: 'Consciência alimentar' },
+      { Icon: Sprout, label: 'Estratégia sustentável' },
     ],
   },
   {
@@ -106,15 +109,15 @@ const areas: Area[] = [
       'Durante a gestação, o pós-parto e a amamentação, as necessidades nutricionais mudam e o acompanhamento individualizado contribui para cuidar da saúde materna e oferecer suporte nutricional adequado a cada etapa.',
     ],
     image: area05,
-    alt: 'Refeição equilibrada com vegetais, grãos e sementes',
+    alt: '',
     tone: 'cream',
     decoration: 'curve',
     position: '50% 49%',
     features: [
-      { icon: 'inchaco', label: 'Gestação' },
-      { icon: 'intestino', label: 'Pós-parto' },
-      { icon: 'tolerancia_alimentar', label: 'Amamentação' },
-      { icon: 'conforto_digestivo', label: 'Saúde materna' },
+      { Icon: PregnancyIcon, label: 'Gestação' },
+      { Icon: PostpartumIcon, label: 'Pós-parto' },
+      { Icon: BreastfeedingIcon, label: 'Amamentação' },
+      { Icon: HandHeart, label: 'Saúde materna' },
     ],
   },
   {
@@ -125,15 +128,15 @@ const areas: Area[] = [
       'A estratégia pode combinar alimentação, prevenção e suplementação individualizada quando indicada, com foco em corrigir desequilíbrios nutricionais e promover saúde e qualidade de vida ao longo do tempo.',
     ],
     image: area06,
-    alt: 'Folha verde com gotas de água representando vitalidade e prevenção',
+    alt: '',
     tone: 'sage',
     decoration: 'line',
     position: '50% 50%',
     features: [
-      { icon: 'prevencao', label: 'Prevenção' },
-      { icon: 'imunidade', label: 'Suplementação' },
-      { icon: 'energia', label: 'Saúde intestinal' },
-      { icon: 'longevidade', label: 'Longevidade' },
+      { Icon: ShieldCheck, label: 'Prevenção' },
+      { Icon: Pill, label: 'Suplementação' },
+      { Icon: IntestineIcon, label: 'Saúde intestinal' },
+      { Icon: Hourglass, label: 'Longevidade' },
     ],
   },
 ];
@@ -153,10 +156,10 @@ function AreasIntro() {
 function AreaFeatures({ features }: { features: AreaFeature[] }) {
   return (
     <ul className={styles.features} aria-label="Aspectos considerados">
-      {features.map((feature, index) => (
-        <li key={feature.label} style={{ '--feature-index': index } as React.CSSProperties}>
-          <Image src={`/icons/${feature.icon}.svg`} alt="" width={26} height={26} aria-hidden="true" />
-          <span>{feature.label}</span>
+      {features.map(({ Icon, label }, index) => (
+        <li key={label} style={{ '--feature-index': index } as React.CSSProperties}>
+          <Icon width={26} height={26} strokeWidth={1.8} aria-hidden="true" />
+          <span>{label}</span>
         </li>
       ))}
     </ul>
@@ -164,9 +167,13 @@ function AreaFeatures({ features }: { features: AreaFeature[] }) {
 }
 
 function AreaCard({ area, index }: { area: Area; index: number }) {
+  const featured = area.number === '01' || area.number === '02' || area.number === '03' || area.number === '04' || area.number === '05' || area.number === '06';
+  const imageName = area.number === '01' ? 'emagrecimento-obesidade' : area.number === '02' ? 'saude-metabolica' : area.number === '03' ? 'saude-da-mulher' : area.number === '04' ? 'comportamento-alimentar' : area.number === '05' ? 'nutricao-materno-infantil' : 'nutricao-funcional-integrativa';
+  const imageVersion = area.number === '03' ? '-v2' : '';
+
   return (
     <article
-      className={`${styles.card} ${styles[area.tone]}`}
+      className={`${styles.card} ${styles[area.tone]} ${featured ? styles.featured : ''} ${area.number === '02' ? styles.metabolic : ''} ${area.number === '03' ? styles.womensHealth : ''} ${area.number === '05' ? styles.maternal : ''} ${area.number === '06' ? styles.functional : ''}`}
       style={{ '--card-index': index } as React.CSSProperties}
       aria-labelledby={`area-${area.number}`}
     >
@@ -178,15 +185,22 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
         <AreaFeatures features={area.features} />
       </div>
       <figure className={styles.figure}>
-        <Image
-          src={area.image}
-          alt={area.alt}
-          fill
-          placeholder="blur"
-          sizes="(max-width: 760px) 86vw, (max-width: 1100px) 42vw, 560px"
-          className={styles.photo}
-          style={{ objectPosition: area.position }}
-        />
+        {featured ? (
+          <picture>
+            <source media="(max-width: 900px)" srcSet={`/areas/${imageName}-mobile${imageVersion}.webp`} />
+            <img src={`/areas/${imageName}-desktop${imageVersion}.webp`} alt={area.alt} className={styles.photo} loading="lazy" decoding="async" />
+          </picture>
+        ) : (
+          <Image
+            src={area.image}
+            alt={area.alt}
+            fill
+            placeholder="blur"
+            sizes="(max-width: 760px) 86vw, (max-width: 1100px) 42vw, 560px"
+            className={styles.photo}
+            style={{ objectPosition: area.position }}
+          />
+        )}
       </figure>
     </article>
   );
