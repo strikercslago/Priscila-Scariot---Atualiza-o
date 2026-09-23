@@ -16,6 +16,7 @@
 
 .timeline { position: relative; }
 .timeline::before { position: absolute; top: 130px; bottom: 130px; left: 50%; width: 1px; background: rgb(63 107 89 / 25%); content: ''; transform: translateX(-50%); }
+.timeline::after { position: absolute; top: 130px; bottom: 130px; left: 50%; width: 2px; background: #3f6b59; content: ''; pointer-events: none; transform: translateX(-50%) scaleY(var(--timeline-progress, 0)); transform-origin: top; }
 .step { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 108px minmax(0, 1fr); align-items: center; min-height: 610px; }
 .step + .step { margin-top: 150px; }
 .marker { z-index: 1; grid-column: 2; grid-row: 1; width: 9px; height: 9px; justify-self: center; border: 2px solid #3f6b59; border-radius: 50%; background: #faf9f5; }
@@ -26,7 +27,7 @@
 .body { max-width: 63ch; color: rgb(35 35 32 / 78%); font-size: 17px; line-height: 1.78; }
 .body p { margin: 0; }
 .body p + p { margin-top: 17px; }
-.stepVisual { display: grid; grid-column: 1; grid-row: 1; min-width: 0; min-height: 510px; place-items: center; }
+.stepVisual { display: grid; grid-column: 1; grid-row: 1; min-width: 0; min-height: 510px; place-items: center; transform: translate3d(0, var(--number-drift, 0px), 0); }
 .reverse .stepVisual { grid-column: 3; }
 .displayNumber { --display-opacity: .9; display: block; color: #80a18e; font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(180px, 20vw, 360px); font-weight: 500; font-variant-numeric: lining-nums tabular-nums; line-height: .82; letter-spacing: -.065em; opacity: var(--display-opacity); white-space: nowrap; }
 .srOnly { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
@@ -62,6 +63,7 @@
   .intro h2 { font-size: clamp(47px, 11.6vw, 66px); line-height: 1; }
   .intro > p:last-child { margin-top: 26px; font-size: 16px; line-height: 1.72; }
   .timeline::before { top: 55px; bottom: 55px; left: 5px; }
+  .timeline::after { top: 55px; bottom: 55px; left: 5px; }
   .step { display: flex; min-height: 0; padding-left: 37px; flex-direction: column; align-items: stretch; }
   .step + .step { margin-top: 88px; }
   .marker { position: absolute; top: clamp(46px, 13vw, 65px); left: 0; width: 10px; height: 10px; }
@@ -82,6 +84,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .timeline::after { transform: translateX(-50%) scaleY(1); }
+  .stepVisual { transform: none !important; }
   .displayNumber, .stepEyebrow, .stepContent h3, .body { animation: none !important; transform: none !important; }
   .displayNumber { opacity: var(--display-opacity) !important; }
   .stepEyebrow, .stepContent h3, .body { opacity: 1 !important; }

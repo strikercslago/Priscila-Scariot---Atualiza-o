@@ -54,7 +54,7 @@ const processSteps: ProcessStep[] = [
 
 function ProcessIntro() {
   return (
-    <header className={styles.intro}>
+    <header className={styles.intro} data-motion-reveal>
       <p className={styles.eyebrow}>Como funciona</p>
       <h2 id="process-title">Um acompanhamento construído <em>etapa por etapa.</em></h2>
       <p>O processo começa entendendo você, seu momento e seus objetivos. A partir disso, cada etapa é construída de forma individualizada, com avaliação, estratégia e ajustes ao longo do acompanhamento.</p>
@@ -64,7 +64,7 @@ function ProcessIntro() {
 
 function ProcessTimeline() {
   return (
-    <div className={styles.timeline}>
+    <div className={styles.timeline} data-motion-timeline>
       {processSteps.map((step, index) => (
         <article className={`${styles.step} ${index % 2 ? styles.reverse : ''}`} key={step.number} aria-labelledby={`process-step-${step.number}`}>
           <span className={styles.marker} aria-hidden="true" />
@@ -84,7 +84,7 @@ function ProcessTimeline() {
 
 function ProcessClosing() {
   return (
-    <div className={styles.closing}>
+    <div className={styles.closing} data-motion-reveal>
       <p>O objetivo não é depender de uma dieta.<br />É construir <em>autonomia</em> para cuidar da sua saúde.</p>
       <BookingButton heroButton />
     </div>

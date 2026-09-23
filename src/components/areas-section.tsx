@@ -143,7 +143,7 @@ const areas: Area[] = [
 
 function AreasIntro() {
   return (
-    <header className={styles.intro}>
+    <header className={styles.intro} data-motion-reveal>
       <p className={styles.eyebrow}>Áreas de atuação</p>
       <h2 id="areas-title" className={styles.title}>
         Um acompanhamento que considera muito mais do que o que está no <em>seu prato.</em>
@@ -175,6 +175,7 @@ function AreaCard({ area, index }: { area: Area; index: number }) {
     <article
       className={`${styles.card} ${styles[area.tone]} ${featured ? styles.featured : ''} ${area.number === '02' ? styles.metabolic : ''} ${area.number === '03' ? styles.womensHealth : ''} ${area.number === '05' ? styles.maternal : ''} ${area.number === '06' ? styles.functional : ''}`}
       style={{ '--card-index': index } as React.CSSProperties}
+      data-motion-card
       aria-labelledby={`area-${area.number}`}
     >
       <img className={styles.decoration} src={`/decor/${area.decoration === 'leaf' ? 'folha_01' : area.decoration === 'curve' ? 'curva_organica' : 'linha_editorial'}.svg`} alt="" aria-hidden="true" />

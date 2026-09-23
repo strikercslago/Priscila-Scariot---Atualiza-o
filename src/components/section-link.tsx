@@ -14,5 +14,5 @@ export function SectionLink({ href, className, children }: { href: `#${string}`;
     target.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
   };
 
-  return <a href={href} className={className} onClick={navigate}>{children}</a>;
+  return <a href={href} className={className} data-motion-cta onClick={navigate}>{children}</a>;
 }

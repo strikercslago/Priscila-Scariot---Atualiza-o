@@ -6,7 +6,9 @@ import '@fontsource/inter/500.css';
 import '@fontsource/cormorant-garamond/500.css';
 import '@fontsource/cormorant-garamond/500-italic.css';
 import './globals.css';
+import './motion.css';
 import { WhatsAppFloat } from '@/components/whatsapp-float';
+import { MotionEffects } from '@/components/motion-effects';
 
 export const metadata: Metadata = {
   title: 'Dra. Priscila Scariot | Nutrição para sua saúde',
@@ -14,5 +16,5 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
-  return <html lang="pt-BR"><body>{children}<WhatsAppFloat /></body></html>;
+  return <html lang="pt-BR"><body>{children}<WhatsAppFloat /><MotionEffects /></body></html>;
 }

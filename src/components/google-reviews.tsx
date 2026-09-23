@@ -198,7 +198,7 @@ function RatingStars({ rating }: { rating: number }) {
 
 function ReviewCard({ review }: { review: GoogleReview & { comment: string } }) {
   return (
-    <article className={styles.card}>
+    <article className={styles.card} data-motion-reveal>
       <div className={styles.cardHeader}>
         {review.avatar && (
           <Image
@@ -232,7 +232,7 @@ export function GoogleReviewsSection() {
     <section className={styles.section} aria-labelledby="google-reviews-title">
       <div className={styles.shell}>
         <div className={styles.panel}>
-          <header className={styles.intro}>
+          <header className={styles.intro} data-motion-reveal>
             <p className={styles.eyebrow}>Avaliações no Google</p>
             <h2 id="google-reviews-title">O que dizem sobre <em>o acompanhamento.</em></h2>
             <p className={styles.subtitle}>Relatos reais de pacientes que confiaram no acompanhamento nutricional da Dra. Priscila Scariot.</p>

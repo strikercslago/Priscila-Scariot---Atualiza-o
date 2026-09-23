@@ -319,7 +319,7 @@
 
 @media (max-width: 760px) {
   .transition { min-height: 44svh; padding: 52px 7%; background-image: none; background-attachment: scroll; }
-  .transitionMedia { position: absolute; z-index: 0; inset: calc(-1 * var(--parallax-overscan, 50%)) 0; display: block; will-change: transform; }
+  .transitionMedia { position: absolute; z-index: 0; inset: calc(-1 * var(--parallax-overscan, 20px)) 0; display: block; }
   .transitionPhoto { object-fit: cover; object-position: center; }
   .transitionOverlay { position: absolute; z-index: 1; inset: 0; display: block; background: rgb(20 45 36 / 20%); pointer-events: none; }
   .organicLines { z-index: 2; }
@@ -346,12 +346,12 @@
   .noteRight { bottom: 24px; left: 16px; }
   .noteLeft { top: 24px; right: -22%; }
   .floatingNote { min-width: 124px; padding: 14px 16px; font-size: 12px; }
-  .visible .photo,
   .visible .floatingNote { animation: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .transitionMedia { transform: none !important; will-change: auto; }
+  .transition { background-attachment: scroll; }
+  .transitionMedia { transform: none !important; }
   .visible .transitionCopy,
   .visible .clinicalHeader,
   .visible .intro,

@@ -65,11 +65,10 @@ export function ClinicalMethod() {
       const viewport = window.visualViewport;
       const viewportHeight = viewport?.height ?? window.innerHeight;
       const viewportCenter = (viewport?.offsetTop ?? 0) + viewportHeight / 2;
-      // Move the photograph at 70% of the page's speed. Size the overscan
-      // from the entire visible scroll journey, so no edge can be exposed.
-      const maxTravel = (viewportHeight + rect.height) * 0.15;
-      const offset = Math.max(-maxTravel, Math.min(maxTravel, (viewportCenter - rect.top - rect.height / 2) * 0.3));
-      media.style.setProperty('--parallax-overscan', `${Math.ceil(maxTravel) + 2}px`);
+      // Keep the existing mobile parallax within an editorial, low-motion range.
+      const maxTravel = 18;
+      const offset = Math.max(-maxTravel, Math.min(maxTravel, (viewportCenter - rect.top - rect.height / 2) * 0.08));
+      media.style.setProperty('--parallax-overscan', `${maxTravel + 2}px`);
       media.style.transform = `translate3d(0, ${offset.toFixed(2)}px, 0)`;
     };
 

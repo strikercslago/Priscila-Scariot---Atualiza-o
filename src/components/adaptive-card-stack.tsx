@@ -45,5 +45,5 @@ export function AdaptiveCardStack({ children, className }: { children: ReactNode
     };
   }, []);
 
-  return <div ref={stackRef} className={className}>{children}</div>;
+  return <div ref={stackRef} className={className} data-motion-stack>{children}</div>;
 }

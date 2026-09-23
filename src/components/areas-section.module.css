@@ -22,7 +22,7 @@
 
 .stack { position: relative; --stack-clearance: 12px; --stack-step: 12px; }
 .stack::after { content: ''; display: block; height: 35svh; }
-.card { position: sticky; top: var(--sticky-top, calc(102px + var(--card-index) * 12px)); z-index: calc(2 + var(--card-index)); display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(380px, .92fr); min-height: min(76svh, 760px); margin-bottom: 15svh; overflow: hidden; border-radius: 28px; box-shadow: 0 24px 65px rgb(35 35 32 / 10%); color: var(--ink); }
+.card { position: sticky; top: var(--sticky-top, calc(102px + var(--card-index) * 12px)); z-index: calc(2 + var(--card-index)); display: grid; grid-template-columns: minmax(0, 1.22fr) minmax(380px, .92fr); min-height: min(76svh, 760px); margin-bottom: 15svh; overflow: hidden; border-radius: 28px; box-shadow: 0 24px 65px rgb(35 35 32 / 10%); color: var(--ink); opacity: var(--stack-opacity, 1); transform: scale(var(--stack-depth, 1)); transform-origin: center top; }
 .card:last-child { margin-bottom: 0; }
 .green { background: var(--green); color: var(--paper); }
 .cream { background: var(--cream); }
@@ -146,6 +146,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .card { opacity: 1 !important; transform: none !important; }
   .numberLine, .content h3, .copy, .features li, .photo { animation: none !important; transform: none !important; }
 }
 @media (min-width: 761px) and (max-width: 1023px) { .lead, .copy { font-size: 16px; } }

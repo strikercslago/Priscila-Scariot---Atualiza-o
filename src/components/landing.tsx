@@ -10,7 +10,7 @@ const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
 export function BookingButton({heroButton = false}: {heroButton?: boolean}) {
   const [notice, setNotice] = useState(false);
   const label = heroButton ? 'Agendar minha consulta' : 'Agendar consulta';
-  return <span className="booking-wrap">{bookingUrl ? <a className="button" href={bookingUrl} target="_blank" rel="noopener noreferrer">{label}<ArrowUpRight size={17}/></a> : <button className="button" onClick={() => setNotice(!notice)} aria-expanded={notice}>{label}<ArrowUpRight size={17}/></button>}{notice && <span className="booking-notice" role="status">O agendamento online estará disponível em breve.</span>}</span>;
+  return <span className="booking-wrap">{bookingUrl ? <a className="button" data-motion-cta href={bookingUrl} target="_blank" rel="noopener noreferrer">{label}<ArrowUpRight size={17}/></a> : <button className="button" data-motion-cta onClick={() => setNotice(!notice)} aria-expanded={notice}>{label}<ArrowUpRight size={17}/></button>}{notice && <span className="booking-notice" role="status">O agendamento online estará disponível em breve.</span>}</span>;
 }
 
 export function Header() {

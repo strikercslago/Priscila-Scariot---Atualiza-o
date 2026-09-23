@@ -17,3 +17,14 @@
 @media(max-width:760px){.navigation.is-open{max-height:calc(100dvh - 82px)}.subheadline{font-size:16px;line-height:1.7}}
 @media(max-width:374px){h1{font-size:clamp(36px,11vw,40px)}}
 @media(min-width:761px) and (max-width:1023px){.subheadline{font-size:16px}}
+
+/* The hero introduces the editorial rhythm once; later sections respond to scroll. */
+@media (prefers-reduced-motion: no-preference) {
+  .hero .eyebrow { animation: heroEditorialIn .65s .06s cubic-bezier(.22, 1, .36, 1) both; }
+  .hero .subheadline { animation: heroEditorialIn .75s .31s cubic-bezier(.22, 1, .36, 1) both; }
+  .hero .hero-actions { animation: heroEditorialIn .75s .42s cubic-bezier(.22, 1, .36, 1) both; }
+  .hero .hero-trust { animation: heroEditorialIn .75s .53s cubic-bezier(.22, 1, .36, 1) both; }
+  .hero .portrait-caption { animation: heroEditorialIn .75s .64s cubic-bezier(.22, 1, .36, 1) both; }
+}
+@keyframes heroEditorialIn { from { opacity: .25; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.header.is-scrolled { background: rgb(250 249 245 / 96%); box-shadow: 0 8px 24px rgb(35 35 32 / 6%), inset 0 -1px rgb(63 107 89 / 10%); }

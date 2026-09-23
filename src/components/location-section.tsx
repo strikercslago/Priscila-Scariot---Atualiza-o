@@ -10,7 +10,7 @@ export function LocationSection() {
   return (
     <section id="localizacao" className={styles.section} aria-labelledby="location-title">
       <div className={styles.inner}>
-        <div className={styles.copy}>
+        <div className={styles.copy} data-motion-reveal>
           <p className={styles.eyebrow}>Localização</p>
           <h2 id="location-title">Onde encontrar<br />a Dra. Priscila</h2>
           <p className={styles.intro}>Um espaço preparado para receber você com conforto e tranquilidade.</p>
@@ -20,11 +20,11 @@ export function LocationSection() {
             <span>Centro, Passo Fundo - RS</span>
             <span>CEP 99010-111</span>
           </address>
-          <a className={styles.directions} href={directionsUrl} target="_blank" rel="noopener noreferrer">
+          <a className={styles.directions} data-motion-cta href={directionsUrl} target="_blank" rel="noopener noreferrer">
             Como chegar <ArrowUpRight size={17} strokeWidth={1.7} aria-hidden="true" />
           </a>
         </div>
-        <div className={styles.map}>
+        <div className={styles.map} data-motion-reveal>
           <iframe
             src={mapUrl}
             title="Localização do consultório da Dra. Priscila Scariot no Clinical Center"

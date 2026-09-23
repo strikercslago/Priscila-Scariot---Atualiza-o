@@ -21,10 +21,13 @@
 .float:focus-visible { outline: 2px solid #3f6b59; outline-offset: 3px; }
 .icon { width: 28px; height: 28px; flex: none; fill: currentColor; }
 .label, .tooltip { display: none; }
+.float[data-motion-ready]:not([data-motion-shown]) { opacity: 0; pointer-events: none; transform: translateY(10px) scale(.94); }
+.float[data-motion-ready] { transition: opacity .36s cubic-bezier(.22, 1, .36, 1), transform .36s cubic-bezier(.22, 1, .36, 1), box-shadow .3s; }
 
 @media (prefers-reduced-motion: no-preference) {
   .icon { animation: whatsappNudge 6s ease-in-out infinite; }
   .float:hover .icon, .float:focus-visible .icon { animation-play-state: paused; }
+  .float[data-motion-ready]:not([data-motion-shown]) .icon { animation-play-state: paused; }
 }
 
 @keyframes whatsappNudge {
@@ -57,5 +60,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .float, .tooltip { transition: none; }
+  .float, .tooltip { transition: none; animation: none !important; }
+  .float[data-motion-ready]:not([data-motion-shown]) { transform: none; }
 }

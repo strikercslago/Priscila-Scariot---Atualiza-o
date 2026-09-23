@@ -33,6 +33,7 @@ export function WhatsAppFloat() {
       onClick={handleClick}
       aria-label={isProjetoVerao ? 'Falar sobre o Projeto Verão pelo WhatsApp' : 'Falar com a Dra. Priscila pelo WhatsApp'}
       className={`${styles.float} ${isProjetoVerao ? styles.project : ''}`}
+      data-motion-whatsapp
     >
       <WhatsAppIcon />
       <span className={styles.label}>{isProjetoVerao ? 'Dúvidas sobre o projeto' : 'Fale com a Priscila'}</span>

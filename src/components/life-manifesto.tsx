@@ -39,6 +39,7 @@ export function LifeManifesto() {
     <section
       ref={sectionRef}
       className={`${styles.manifesto} ${visible ? styles.visible : ''}`}
+      data-motion-manifesto
       aria-labelledby="life-manifesto-title"
     >
       <div className={styles.inner}>

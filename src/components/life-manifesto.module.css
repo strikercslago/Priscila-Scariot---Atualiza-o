@@ -10,15 +10,12 @@
   overflow: hidden;
   padding: 92px 5%;
   background-color: var(--green-deep);
-  background-image: linear-gradient(90deg, rgb(13 31 24 / 28%) 0%, rgb(13 31 24 / 62%) 38%, rgb(13 31 24 / 52%) 65%, rgb(13 31 24 / 28%) 100%), url('/life-manifesto-consultation.png');
-  background-position: center center, 65% 40%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
   color: var(--paper);
 }
 
-.inner { width: 100%; max-width: 1360px; margin: 0 auto; }
+.manifesto::before { position: absolute; inset: -60px 0; background: url('/life-manifesto-consultation.png') 65% 40% / cover no-repeat; content: ''; pointer-events: none; transform: translate3d(0, var(--manifesto-shift, 0px), 0) scale(var(--manifesto-scale, 1.03)); }
+.manifesto::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(13 31 24 / 28%) 0%, rgb(13 31 24 / 62%) 38%, rgb(13 31 24 / 52%) 65%, rgb(13 31 24 / 28%) 100%); content: ''; pointer-events: none; }
+.inner { position: relative; z-index: 1; width: 100%; max-width: 1360px; margin: 0 auto; }
 .copyBlock { max-width: 720px; margin-left: clamp(260px, 24vw, 470px); }
 .eyebrow { display: flex; align-items: center; gap: 13px; margin: 0 0 27px; color: rgb(249 231 184 / 84%); font-size: 10px; font-weight: 500; letter-spacing: .19em; text-transform: uppercase; }
 .eyebrow i { display: block; width: 34px; height: 1px; background: currentColor; }
@@ -50,14 +47,17 @@
 }
 
 @media (max-width: 1100px) {
-  .manifesto { min-height: 80svh; padding: 72px 4.5%; background-position: center center, 38% 40%; }
+  .manifesto { min-height: 80svh; padding: 72px 4.5%; }
+  .manifesto::before { background-position: 38% 40%; }
   .copyBlock { max-width: 650px; margin-left: clamp(210px, 23vw, 300px); }
   .title { font-size: clamp(48px, 5.7vw, 61px); }
   .support { max-width: 570px; font-size: 16px; }
 }
 
 @media (max-width: 760px) {
-  .manifesto { min-height: max(78svh, 760px); align-items: flex-start; padding: 228px 7% 52px; background-image: linear-gradient(180deg, rgb(13 31 24 / 12%) 0%, rgb(13 31 24 / 42%) 28%, rgb(13 31 24 / 78%) 58%, rgb(13 31 24 / 88%) 100%), url('/life-manifesto-consultation.png'); background-position: center center, 34% center; background-attachment: scroll; }
+  .manifesto { min-height: max(78svh, 760px); align-items: flex-start; padding: 228px 7% 52px; }
+  .manifesto::before { inset: -32px 0; background-position: 34% center; }
+  .manifesto::after { background: linear-gradient(180deg, rgb(13 31 24 / 12%) 0%, rgb(13 31 24 / 42%) 28%, rgb(13 31 24 / 78%) 58%, rgb(13 31 24 / 88%) 100%); }
   .copyBlock { max-width: none; margin-left: 0; }
   .eyebrow { gap: 10px; margin-bottom: 22px; font-size: 8px; letter-spacing: .14em; }
   .eyebrow i { width: 24px; }
@@ -71,7 +71,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .manifesto { background-attachment: scroll; }
+  .manifesto::before { transform: none !important; }
   .visible .eyebrow, .visible .title, .visible .support, .visible .closing, .visible .actionGroup { animation: none; }
 }
 @media (min-width: 761px) and (max-width: 1023px) { .closing { font-size: 16px; } }

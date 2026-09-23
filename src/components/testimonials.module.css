@@ -26,6 +26,10 @@
 .story { display: flex; flex: 0 0 clamp(280px, 27vw, 380px); flex-direction: column; width: clamp(280px, 27vw, 380px); overflow: hidden; scroll-snap-align: start; border: 1px solid rgb(63 107 89 / 15%); border-radius: 12px; background: #faf9f5; }
 .figure { position: relative; width: 100%; aspect-ratio: 1 / 1.2; margin: 0; overflow: hidden; background: #d9ddd5; }
 .photo { object-fit: cover; object-position: center top; transform: scale(1.12); transform-origin: center top; pointer-events: none; user-select: none; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .photo { transition: transform .65s cubic-bezier(.22, 1, .36, 1); }
+  .story:hover .photo { transform: scale(1.135); }
+}
 .content { display: flex; flex: 1; flex-direction: column; padding: 22px 24px 27px; }
 .meta { display: flex; align-items: center; gap: 12px; min-height: 27px; padding-bottom: 13px; border-bottom: 1px solid rgb(63 107 89 / 22%); }
 .number { color: #6a927e; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-variant-numeric: lining-nums tabular-nums; line-height: 1; }

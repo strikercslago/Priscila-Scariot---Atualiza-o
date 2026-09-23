@@ -62,7 +62,7 @@ const storyCount = patientStories.length;
 
 function TestimonialIntro() {
   return (
-    <header className={styles.intro}>
+    <header className={styles.intro} data-motion-reveal>
       <p className={styles.eyebrow}>Experiências de pacientes</p>
       <h2 id="stories-title"><em>Histórias reais</em> por trás do acompanhamento.</h2>
       <p className={styles.lead}>Cada pessoa chega com uma história, necessidades e objetivos diferentes. Alguns desses relatos mostram experiências de pacientes que passaram pelo acompanhamento nutricional da Dra. Priscila.</p>
@@ -73,7 +73,7 @@ function TestimonialIntro() {
 function Story({ story }: { story: PatientStory }) {
   const headingId = `story-${story.number}`;
   return (
-    <article className={styles.story} data-story-card aria-labelledby={headingId}>
+    <article className={styles.story} data-story-card data-motion-reveal aria-labelledby={headingId}>
       <figure className={styles.figure}>
         <Image src={story.image} alt={story.alt} fill placeholder="blur" sizes="(max-width: 760px) 80vw, (max-width: 900px) 52vw, 380px" className={styles.photo} draggable={false} />
       </figure>
@@ -231,7 +231,7 @@ function StoriesCarousel() {
 
 function TestimonialsClosing() {
   return (
-    <div className={styles.closing}>
+    <div className={styles.closing} data-motion-reveal data-motion-final>
       <p className={styles.eyebrow}>Cada história é única</p>
       <h2>O próximo processo<br />pode começar por <em>você.</em></h2>
       <BookingButton heroButton />

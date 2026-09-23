@@ -1,0 +1,39 @@
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion-reveal]:not([data-motion-final])[data-motion-inview="true"] {
+    animation: editorialReveal .75s cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  [data-motion-final][data-motion-inview="true"] h2 {
+    animation: editorialReveal .8s cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  [data-motion-final][data-motion-inview="true"] .booking-wrap {
+    animation: editorialReveal .72s .16s cubic-bezier(.22, 1, .36, 1) both;
+  }
+
+  [data-story-card]:nth-child(2)[data-motion-inview="true"],
+  [data-motion-reveal]:nth-child(3n + 2)[data-motion-inview="true"] {
+    animation-delay: 70ms;
+  }
+
+  [data-story-card]:nth-child(3)[data-motion-inview="true"],
+  [data-motion-reveal]:nth-child(3n)[data-motion-inview="true"] {
+    animation-delay: 140ms;
+  }
+}
+
+@keyframes editorialReveal {
+  from { opacity: .55; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+[data-motion-cta] { transition: background .25s, color .25s, transform .25s, box-shadow .25s; }
+[data-motion-cta] svg { transition: transform .25s; }
+[data-motion-cta]:hover { transform: translateY(-2px); box-shadow: 0 9px 20px rgb(25 53 39 / 14%); }
+[data-motion-cta]:hover svg { transform: translate(3px, -1px); }
+[data-motion-cta]:active { transform: scale(.98); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-reveal][data-motion-inview="true"] { animation: none; }
+  [data-motion-cta]:hover, [data-motion-cta]:active { transform: none; }
+}
