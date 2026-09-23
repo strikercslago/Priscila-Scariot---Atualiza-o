@@ -1,8 +1,3 @@
-import Image, { type StaticImageData } from 'next/image';
-import consultation from '../../public/manifesto-consulta.webp';
-import analysis from '../../public/clinical-analysis.png';
-import planning from '../../public/hero.webp';
-import followUp from '../../public/clinical-consultation.png';
 import { BookingButton } from './landing';
 import styles from './how-it-works.module.css';
 
@@ -11,9 +6,6 @@ type ProcessStep = {
   eyebrow: string;
   title: string;
   paragraphs: string[];
-  image: StaticImageData;
-  alt: string;
-  position: string;
 };
 
 const processSteps: ProcessStep[] = [
@@ -26,9 +18,6 @@ const processSteps: ProcessStep[] = [
       'Mais do que perguntar o que você come, o atendimento considera seu histórico clínico, relação com a alimentação, exames, hábitos, preferências, uso de medicamentos e contexto de vida.',
       'Esse primeiro encontro cria a base para que as próximas decisões façam sentido para você.',
     ],
-    image: consultation,
-    alt: 'Dra. Priscila conversando com uma paciente durante a consulta.',
-    position: '44% center',
   },
   {
     number: '02',
@@ -39,9 +28,6 @@ const processSteps: ProcessStep[] = [
       'Quando necessário, exames laboratoriais, composição corporal, sintomas, histórico metabólico e outros fatores clínicos ajudam a construir uma visão mais completa.',
       'O objetivo é evitar estratégias genéricas e entender o que realmente precisa de atenção.',
     ],
-    image: analysis,
-    alt: 'Análise de exames e anotações durante o planejamento nutricional.',
-    position: '52% center',
   },
   {
     number: '03',
@@ -52,9 +38,6 @@ const processSteps: ProcessStep[] = [
       'Ela considera seus objetivos, necessidades clínicas, rotina, preferências, horários, dificuldades e aquilo que você realmente consegue sustentar.',
       'A proposta não é entregar uma dieta perfeita no papel, mas construir um caminho possível de aplicar fora do consultório.',
     ],
-    image: planning,
-    alt: 'Dra. Priscila no consultório, com alimentos frescos à mesa.',
-    position: '70% center',
   },
   {
     number: '04',
@@ -66,9 +49,6 @@ const processSteps: ProcessStep[] = [
       'A partir disso, os ajustes são feitos de forma progressiva, respeitando mudanças no corpo, nos objetivos e na vida.',
       'O processo é dinâmico: observar, ajustar e continuar avançando.',
     ],
-    image: followUp,
-    alt: 'Conversa com paciente e revisão de anotações durante uma consulta.',
-    position: '50% center',
   },
 ];
 
@@ -88,17 +68,14 @@ function ProcessTimeline() {
       {processSteps.map((step, index) => (
         <article className={`${styles.step} ${index % 2 ? styles.reverse : ''}`} key={step.number} aria-labelledby={`process-step-${step.number}`}>
           <span className={styles.marker} aria-hidden="true" />
+          <div className={styles.stepVisual}><span className={styles.displayNumber}><span className={styles.srOnly}>Etapa </span>{step.number}</span></div>
           <div className={styles.stepContent}>
-            <span className={styles.number} aria-hidden="true">{step.number}</span>
             <p className={styles.stepEyebrow}>{step.eyebrow}</p>
             <h3 id={`process-step-${step.number}`}>{step.title}</h3>
             <div className={styles.body}>
               {step.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </div>
-          <figure className={styles.figure}>
-            <Image src={step.image} alt={step.alt} fill placeholder="blur" sizes="(max-width: 760px) 77vw, (max-width: 1100px) 39vw, 510px" className={styles.photo} style={{ objectPosition: step.position }} />
-          </figure>
         </article>
       ))}
     </div>

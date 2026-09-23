@@ -52,7 +52,8 @@
 .featured .figure { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
 .featured .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 62% center; }
 .featured .decoration { z-index: 2; right: -30px; bottom: -38px; opacity: .28; }
-.metabolic { color: var(--paper); }
+.metabolic { background: #a6121c; color: var(--paper); }
+.metabolic::before { background: linear-gradient(90deg, rgb(166 18 28 / 97%) 0%, rgb(166 18 28 / 92%) 25%, rgb(166 18 28 / 72%) 43%, rgb(166 18 28 / 23%) 65%, transparent 82%); }
 .metabolic .features li { color: var(--cream); }
 .womensHealth { background: #f1f4ee; color: var(--ink); }
 .womensHealth::before { background: linear-gradient(90deg, rgb(241 244 238 / 100%) 0%, rgb(241 244 238 / 98%) 26%, rgb(241 244 238 / 90%) 42%, rgb(241 244 238 / 68%) 56%, rgb(241 244 238 / 30%) 70%, transparent 84%); }
@@ -85,6 +86,7 @@
   .content { padding: 50px; }
   .features { grid-template-columns: repeat(2, 1fr); gap: 25px 18px; padding-top: 38px; }
   .featured::before { background: linear-gradient(90deg, rgb(25 67 52 / 96%) 0%, rgb(25 67 52 / 91%) 35%, rgb(25 67 52 / 72%) 60%, rgb(25 67 52 / 8%) 96%); }
+  .metabolic::before { background: linear-gradient(90deg, rgb(166 18 28 / 96%) 0%, rgb(166 18 28 / 91%) 35%, rgb(166 18 28 / 72%) 60%, rgb(166 18 28 / 8%) 96%); }
   .featured .content { width: 60%; }
   .womensHealth::before { background: linear-gradient(90deg, rgb(241 244 238 / 100%) 0%, rgb(241 244 238 / 98%) 35%, rgb(241 244 238 / 86%) 60%, rgb(241 244 238 / 10%) 96%); }
   .maternal::before { background: linear-gradient(90deg, rgb(249 231 184 / 99%) 0%, rgb(249 231 184 / 96%) 35%, rgb(249 231 184 / 79%) 60%, rgb(249 231 184 / 12%) 96%); }
@@ -126,6 +128,7 @@
 @media (max-width: 900px) {
   .featured { min-height: max(820px, 90svh); }
   .featured::before { background: linear-gradient(180deg, rgb(20 54 42 / 12%) 0%, rgb(20 54 42 / 9%) 35%, rgb(20 54 42 / 35%) 100%), linear-gradient(90deg, rgb(20 56 43 / 91%) 0%, rgb(20 56 43 / 77%) 55%, rgb(20 56 43 / 36%) 100%); }
+  .metabolic::before { background: linear-gradient(180deg, rgb(112 10 20 / 12%) 0%, rgb(112 10 20 / 9%) 35%, rgb(112 10 20 / 35%) 100%), linear-gradient(90deg, rgb(166 18 28 / 91%) 0%, rgb(166 18 28 / 77%) 55%, rgb(166 18 28 / 36%) 100%); }
   .womensHealth::before { background: linear-gradient(180deg, rgb(241 244 238 / 8%) 0%, rgb(241 244 238 / 8%) 48%, rgb(241 244 238 / 24%) 100%), linear-gradient(90deg, rgb(241 244 238 / 98%) 0%, rgb(241 244 238 / 92%) 48%, rgb(241 244 238 / 62%) 72%, rgb(241 244 238 / 22%) 100%); }
   .maternal::before { background: linear-gradient(180deg, rgb(249 231 184 / 14%) 0%, rgb(249 231 184 / 12%) 45%, rgb(249 231 184 / 40%) 100%), linear-gradient(90deg, rgb(249 231 184 / 97%) 0%, rgb(249 231 184 / 91%) 48%, rgb(249 231 184 / 61%) 74%, rgb(249 231 184 / 18%) 100%); }
   .functional::before { background: linear-gradient(180deg, rgb(221 232 225 / 14%) 0%, rgb(221 232 225 / 12%) 45%, rgb(221 232 225 / 38%) 100%), linear-gradient(90deg, rgb(221 232 225 / 97%) 0%, rgb(221 232 225 / 90%) 48%, rgb(221 232 225 / 59%) 74%, rgb(221 232 225 / 17%) 100%); }

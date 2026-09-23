@@ -5,9 +5,10 @@ import { AreasSection } from '@/components/areas-section';
 import { LifeManifesto } from '@/components/life-manifesto';
 import { AboutJourneySection } from '@/components/about-journey';
 import { HowItWorksSection } from '@/components/how-it-works';
-import { TestimonialsSection } from '@/components/testimonials';
+import { TestimonialsClosingSection, TestimonialsSection } from '@/components/testimonials';
 import { GoogleReviewsSection } from '@/components/google-reviews';
+import { LocationSection } from '@/components/location-section';
 
 export default function Home() {
-  return <><a className="skip-link" href="#conteudo">Pular para o conteúdo</a><Header /><main id="conteudo"><Hero /><ExpertiseBar /><Identification /><ClinicalMethod /><AreasSection /><LifeManifesto /><AboutJourneySection /><HowItWorksSection /><TestimonialsSection /><GoogleReviewsSection /></main></>;
+  return <><a className="skip-link" href="#conteudo">Pular para o conteúdo</a><Header /><main id="conteudo"><Hero /><ExpertiseBar /><Identification /><ClinicalMethod /><AreasSection /><LifeManifesto /><AboutJourneySection /><HowItWorksSection /><TestimonialsSection /><GoogleReviewsSection /><TestimonialsClosingSection /><LocationSection /></main></>;
 }

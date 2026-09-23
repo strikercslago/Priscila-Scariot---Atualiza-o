@@ -1,6 +1,6 @@
 .section {
-  padding: 112px 4% 125px;
-  background: #faf9f5;
+  padding: 0 4% 65px;
+  background: #f1f4ee;
   scroll-margin-top: 100px;
 }
 
@@ -183,14 +183,14 @@
 .date { color: #858c83; font-size: 11px; text-align: right; }
 
 @media (max-width: 1050px) {
-  .section { padding: 95px 4% 108px; }
+  .section { padding: 0 4% 55px; }
   .shell { padding: 32px; border-radius: 32px; }
   .panel { padding: 40px; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
-  .section { padding: 78px 4% 92px; }
+  .section { padding: 0 4% 48px; }
   .shell { padding: 16px; border-radius: 26px; }
   .panel { padding: 36px 19px; border-radius: 15px; }
   .intro { margin-bottom: 33px; }
