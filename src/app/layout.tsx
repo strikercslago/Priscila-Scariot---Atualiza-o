@@ -9,10 +9,11 @@ import './globals.css';
 import './motion.css';
 import { WhatsAppFloat } from '@/components/whatsapp-float';
 import { MotionEffects } from '@/components/motion-effects';
+import { homeDescription, homeTitle } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: 'Dra. Priscila Scariot | Nutrição para sua saúde',
-  description: 'Estratégias nutricionais personalizadas para quem busca emagrecimento, mais saúde e qualidade de vida. Consultas presenciais e online com Dra. Priscila Scariot.',
+  title: homeTitle,
+  description: homeDescription,
   robots: { index: true, follow: true },
 };
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
