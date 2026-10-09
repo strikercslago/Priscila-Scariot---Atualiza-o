@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   title: homeTitle,
   description: homeDescription,
   robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: '/favicon.png', type: 'image/png', sizes: '96x96' }],
+    apple: [{ url: '/apple-touch-icon.png', type: 'image/png', sizes: '180x180' }],
+  },
 };
 export default function RootLayout({ children }: Readonly<{children: React.ReactNode}>) {
   return <html lang="pt-BR"><body>{children}<WhatsAppFloat /><MotionEffects /></body></html>;
